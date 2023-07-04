@@ -38,7 +38,7 @@
                     <v-list-item
                         class="px-2"
                         key="commentaries"
-                        to="/commentaries"
+                        to="/comments/commentaries"
                         @click="changeUrl()"
                         color="primary"
                         style="font-weight:700;"
@@ -80,7 +80,7 @@
                                             outlined
                                             rounded
                                             key="commentaries"
-                                            to="/commentaries"
+                                            to="/comments/commentaries"
                                             @click="changeUrl()"
                                             color="primary"
                                             style="font-weight:500; font-size:20px; padding:15px; border:solid 2px; max-width:250px; overflow:hidden"
