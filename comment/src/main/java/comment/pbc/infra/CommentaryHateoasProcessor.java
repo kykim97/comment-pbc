@@ -12,6 +12,10 @@ public class CommentaryHateoasProcessor
 
     @Override
     public EntityModel<Commentary> process(EntityModel<Commentary> model) {
+        model.add(
+            Link.of(model.getRequiredLink("self").getHref() + "/").withRel("")
+        );
+
         return model;
     }
 }
