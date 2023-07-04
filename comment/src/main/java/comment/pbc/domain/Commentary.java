@@ -1,7 +1,6 @@
 package comment.pbc.domain;
 
 import comment.pbc.CommentApplication;
-import comment.pbc.domain.Commented;
 import java.util.Date;
 import java.util.List;
 import javax.persistence.*;
@@ -27,10 +26,7 @@ public class Commentary {
     private Date timeStamp;
 
     @PostPersist
-    public void onPostPersist() {
-        Commented commented = new Commented(this);
-        commented.publishAfterCommit();
-    }
+    public void onPostPersist() {}
 
     public static CommentaryRepository repository() {
         CommentaryRepository commentaryRepository = CommentApplication.applicationContext.getBean(
@@ -39,7 +35,9 @@ public class Commentary {
         return commentaryRepository;
     }
 
-    public void comment(CommentCommand commentCommand) {
+    public void comment() {
+        //implement business logic here:
+
         Commented commented = new Commented(this);
         commented.publishAfterCommit();
     }
